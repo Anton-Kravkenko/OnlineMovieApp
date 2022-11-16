@@ -1,0 +1,19 @@
+.Search_imput {
+	background-color: #1B182B;
+	border: none;
+	width: 100%;
+	height: 50px;
+	font-size: 18px;
+	color: white;
+	text-decoration: none;
+	text-shadow: none;
+	text-indent: 10px;
+	
+	z-index: 1001;
+	position: relative;
+}
+
+.Search_imput::placeholder {
+	color: white;
+	font-family: "Object-Bold";
+}

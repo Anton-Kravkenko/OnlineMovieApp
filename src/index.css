@@ -1,0 +1,56 @@
+@font-face {
+	font-family: "Object-Bold";
+	src: local("Object-Bold"),
+	url("./utils/font/Objet-Bold.ttf") format("truetype");
+	font-weight: bold;
+}
+
+body {
+	margin: 0;
+	overflow: scroll;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+	'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	
+}
+
+body::-webkit-scrollbar { /* WebKit */
+	width: 0;
+	height: 0;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+	monospace;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+	padding: 0;
+	margin: 0;
+	font-family: "Object-Bold";
+	pointer-events: all;
+	position: relative;
+	
+}
+
+a {
+	z-index: 10;
+}
+
+.HeadingInComponents {
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 23px;
+	
+}
+
+
+
