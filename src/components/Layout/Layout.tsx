@@ -9,12 +9,12 @@ import { ILayout } from './Layout.interface'
 import './Layout.styles.scss'
 
 
-const Layout: FC<PropsWithChildren<ILayout>> = ({ children, className, havePadding }) => {
+const Layout: FC<PropsWithChildren<ILayout>> = ({ children, className, havePadding, HaveBottomPadding }) => {
 	let activeStyle: object = {
 		color: 'white'
 	}
 	return <div className={clsx('Wrapper', className, {
-		'LayoutPadding': havePadding
+		'LayoutPadding': havePadding, 'LayoutBottomPadding': HaveBottomPadding
 	})}>{children}
 		
 		<div className='navigationBar'>

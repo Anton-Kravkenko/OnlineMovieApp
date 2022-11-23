@@ -1,0 +1,134 @@
+
+.MoviePageBg:after {
+	background: rgb(12, 8, 28);
+	background: linear-gradient(0deg, rgba(12, 8, 28, 1) 5%, rgba(255, 255, 255, 0) 25%);
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	position: absolute;
+	height: 60vh;
+	z-index: 1;
+}
+
+.MoviePageBg {
+	height: 60vh;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: auto;
+	margin: 0 auto;
+}
+
+.ButtonInHeader {
+	padding: 15px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	.HeaderIcon {
+		background-color: #0C081C;
+		padding: 10px;
+		font-size: 25px;
+		border-radius: 100%;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		z-index: 1000;
+		cursor: pointer;
+	}
+}
+
+.ContentWrapper {
+	padding-left: 15px;
+	padding-right: 15px;
+	
+	
+	.RattingWraper {
+		display: flex;
+		gap: 5px;
+	}
+	
+	.RatingIcons {
+		color: #F9BC2B;
+		font-size: 25px;
+	}
+	
+	.RattingText {
+		font-size: 20px;
+		display: flex;
+		gap: 10px;
+	}
+}
+
+h1 {
+	margin-top: 5px;
+}
+
+h3 {
+	margin-top: 10px;
+	color: #8A8991;
+}
+
+.GenresWrapper {
+	display: flex;
+	gap: 10px;
+	margin-top: 10px;
+	
+	.GenresElement {
+		background-color: #323944;
+		padding: 5px 10px 5px 10px;
+		border-radius: 15px;
+		display: flex;
+		font-size: 16px;
+	}
+}
+
+
+.ActorHeaderText {
+	font-size: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+
+.ActorsWrapper {
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	
+	img {
+		width: 70px;
+		height: 100%;
+		object-fit: cover;
+	}
+	
+	p {
+		font-size: 21px;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		margin-left: 10px;
+	}
+	
+}
+
+.swiper {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	position: relative;
+	z-index: 1000;
+}
+
+.ActorSlider {
+	position: relative;
+	max-width: 240px;
+	z-index: 1000;
+	margin-right: 20px;
+	display: flex;
+	height: 100%;
+	background-color: #1B182B;
+}

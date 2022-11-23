@@ -14,10 +14,10 @@ const RecPlayed: FC<RecPlayedInterface> = ({ Heading, data, className }) => {
 		        className={'wrapperForRECSlider'}
 		>
 			
-			{data?.map(({ image, heading, Avtor }) => <SwiperSlide className='albomWrapper'>
-				<img alt='albomFoto' src={image} className='albomPhoto' />
-				<h3 className='albomTitle'>{heading}</h3>
-				<h4 className='albomAvtor'>{Avtor}</h4>
+			{data?.map((data) => <SwiperSlide className='albomWrapper'>
+				<img alt='albomFoto' src={data.image} className='albomPhoto' />
+				<h3 className='albomTitle'>{data.heading}</h3>
+				<h4 className='albomAvtor'>{data.Avtor}</h4>
 			</SwiperSlide>)}
 		
 		

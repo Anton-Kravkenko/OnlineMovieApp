@@ -1,14 +1,20 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import Favorites from './screens/Favorites/favorites'
 import Home from './screens/Home/home'
-import Notfound from './screens/NotFound/notfound'
-import NowSong from './screens/nowSong/nowSong'
+import MoviePages from './screens/Movie-page/MoviePages'
+import Notfound from './screens/notfound/notfound'
 import Search from './screens/Search/search'
 import './utils/font/Objet-Bold.ttf'
 
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: { refetchOnWindowFocus: false }
+	}
+})
 
 const router = createBrowserRouter([
 	{
@@ -21,8 +27,8 @@ const router = createBrowserRouter([
 	},
 	
 	{
-		path: '/song',
-		element: <NowSong />
+		path: '/movies/:movieSlug',
+		element: <MoviePages />
 	},
 	
 	{
@@ -44,7 +50,10 @@ const root = ReactDOM.createRoot(
 )
 root.render(
 	<React.StrictMode>
-		<RouterProvider router={router} />
+		<QueryClientProvider client={queryClient}>
+			
+			<RouterProvider router={router} />
+		</QueryClientProvider>
 	</React.StrictMode>
 )
 
