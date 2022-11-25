@@ -5,8 +5,8 @@ import { HiOutlineHome } from 'react-icons/hi'
 import { MdFavoriteBorder } from 'react-icons/md'
 import { RiCompass3Line } from 'react-icons/ri'
 import { NavLink } from 'react-router-dom'
-import { ILayout } from './Layout.interface'
 import './Layout.styles.scss'
+import { ILayout } from './Layout.types'
 
 
 const Layout: FC<PropsWithChildren<ILayout>> = ({ children, className, havePadding, HaveBottomPadding }) => {

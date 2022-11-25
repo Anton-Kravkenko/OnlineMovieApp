@@ -3,6 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
+import ActorPage from './screens/ActorPage/ActorPage'
 import Favorites from './screens/Favorites/favorites'
 import Home from './screens/Home/home'
 import MoviePages from './screens/Movie-page/MoviePages'
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
 	{
 		path: '/movies/:movieSlug',
 		element: <MoviePages />
+	},
+	{
+		path: '/actor/:ActorSlug',
+		element: <ActorPage />
 	},
 	
 	{

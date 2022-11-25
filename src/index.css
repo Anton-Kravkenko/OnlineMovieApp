@@ -33,23 +33,13 @@ code {
 h1, h2, h3, h4, h5, h6, p, a {
 	padding: 0;
 	margin: 0;
+	text-decoration: none;
 	font-family: "Object-Bold";
 	pointer-events: all;
 	position: relative;
 }
 
-a {
-	z-index: 10;
-}
 
-.HeadingInComponents {
-	text-transform: uppercase;
-	font-weight: 700;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	font-size: 23px;
-	
-}
 
 
 

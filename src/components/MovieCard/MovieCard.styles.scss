@@ -1,0 +1,40 @@
+.ContentWrapperForCard {
+	display: block;
+	backdrop-filter: blur(7px);
+	border-radius: 10px 0px 8px 8px;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	
+	
+	.RattingWraper {
+		justify-content: center;
+		display: flex;
+		gap: 5px;
+		align-items: center;
+	}
+	
+	.RatingIcons {
+		color: #F9BC2B;
+		font-size: 18px;
+	}
+	
+	.RattingText {
+		font-size: 18px;
+		color: white;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	
+	.MovieNameInActorPage {
+		font-size: 16px;
+		width: 150px;
+		color: white;
+		margin: 0px auto 10px auto;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+}

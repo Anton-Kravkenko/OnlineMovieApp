@@ -18,6 +18,7 @@ export type Iparameters = {
 
 export type IActors = {
 	name: string,
+	_id: string,
 	photo: string,
 	slug: string,
 }

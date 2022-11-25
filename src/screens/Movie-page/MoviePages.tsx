@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { AiFillStar } from 'react-icons/ai'
 import { BsArrowLeftShort } from 'react-icons/bs'
 import { MdFavoriteBorder } from 'react-icons/md'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Layout from '../../components/Layout/Layout'
 import { GetMediaSource } from '../../utils/getMediaSource'
@@ -18,20 +18,23 @@ const MoviePages = () => {
 		data: movie,
 		error
 	} = useQuery(['getCurrentMovie'], () => MovieServices.getMovieBySlug(params.movieSlug))
-	console.log(movie)
 	if (movie === undefined) {
-		console.log('data undefined')
 		return null
 	}
-	
 	return <Layout HaveBottomPadding={true}>
 		<div className='MoviePageBg'
 		     style={{
 			     backgroundImage: `url(${GetMediaSource(movie.data.poster)})`
 		     }}>
-			<div className='ButtonInHeader'>
-				<BsArrowLeftShort className='HeaderIcon' onClick={() => navigate(-1)} />
-				<MdFavoriteBorder className='HeaderIcon' />
+			<div style={{
+				position: 'fixed',
+				width: '100%',
+				zIndex: '1000'
+			}}>
+				<div className='ButtonInHeader'>
+					<BsArrowLeftShort className='HeaderIcon' onClick={() => navigate(-1)} />
+					<MdFavoriteBorder className='HeaderIcon' />
+				</div>
 			</div>
 		</div>
 		
@@ -50,7 +53,7 @@ const MoviePages = () => {
 			
 			<div className='GenresWrapper'>
 				{movie.data.genres.map((genre: IGenre) => (
-					<a className='GenresElement'>
+					<a className='GenresElement' key={genre.name}>
 						{genre.name} </a>
 				))}
 			</div>
@@ -60,10 +63,14 @@ const MoviePages = () => {
 			<Swiper slidesPerView={'auto'}
 			        className='ActorsWrapper'>
 				{movie.data.actors.map((actor: IActors) => (
-					<SwiperSlide className='ActorSlider'>
-						<img src={GetMediaSource(actor.photo)} />
-						<p>
-							{actor.name} </p>
+					<SwiperSlide key={actor._id}>
+						<Link to={`/actor/${actor.slug}`} className='LinkWrapper'>
+							<div className='ActorSlider'>
+								<img className='ActorPhoto' src={GetMediaSource(actor.photo)} />
+								<p className='ActorName'>
+									{actor.name} </p>
+							</div>
+						</Link>
 					</SwiperSlide>
 				))}
 			</Swiper>

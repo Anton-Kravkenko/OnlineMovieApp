@@ -1,0 +1,13 @@
+.HeaderActorPage {
+	padding: 15px;
+	background-color: #1B182B;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	svg {
+		font-size: 30px;
+		font-weight: bold;
+		cursor: pointer;
+	}
+}

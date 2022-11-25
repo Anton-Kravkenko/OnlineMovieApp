@@ -8,5 +8,15 @@ export const MovieServices = {
 	
 	async getMovieBySlug(slug: string) {
 		return axios.get(`/movies/by-slug/${slug}`)
+	},
+	
+	
+	async getMovieByActorId(ActorId: string) {
+		return axios.get(`/movies/by-actor/${ActorId}`)
+	},
+	
+	async getActorbySlug(slug: string) {
+		return axios.get(`/actors/by-slug/${slug}`)
 	}
+	
 }
