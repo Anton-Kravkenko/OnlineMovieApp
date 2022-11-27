@@ -23,7 +23,7 @@ const HomePageSlider = ({ data }: any) => {
 							<img alt={'Load...'} src={GetMediaSource(movie.poster)} />
 						
 						</div>
-						<h1>f</h1>
+					
 					</Link>
 				</SwiperSlide>
 			))}

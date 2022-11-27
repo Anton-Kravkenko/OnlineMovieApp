@@ -8,6 +8,7 @@ import Layout from '../../components/Layout/Layout'
 import { GetMediaSource } from '../../utils/getMediaSource'
 import { MovieServices } from '../../utils/services'
 import { IActors, IGenre } from '../Home/home.interface'
+import Loader from '../Loader/Loader'
 import './MoviePage.styles.scss'
 
 const MoviePages = () => {
@@ -18,10 +19,15 @@ const MoviePages = () => {
 		data: movie,
 		error
 	} = useQuery(['getCurrentMovie'], () => MovieServices.getMovieBySlug(params.movieSlug))
+	
 	if (movie === undefined) {
 		return null
 	}
-	return <Layout HaveBottomPadding={true}>
+	
+	if (isLoading) {
+		return <Loader />
+	}
+	return <Layout HaveBottomPadding>
 		<div className='MoviePageBg'
 		     style={{
 			     backgroundImage: `url(${GetMediaSource(movie.data.poster)})`
@@ -48,13 +54,17 @@ const MoviePages = () => {
 			
 			
 			</div>
-			<h1>{movie.data.title}</h1>
+			<div className='TitleAndWatch'>
+				<h1>{movie.data.title}</h1>
+				<Link to={`/Watch/${movie.data.slug}`} className='WatchWrapper'>Watch</Link>
+			</div>
+			
 			<h3>{movie.data.parameters.duration}min | {movie.data.parameters.country} | {movie.data.parameters.year}</h3>
 			
 			<div className='GenresWrapper'>
 				{movie.data.genres.map((genre: IGenre) => (
-					<a className='GenresElement' key={genre.name}>
-						{genre.name} </a>
+					<Link to={`/genre/${genre.slug}`} className='GenresElement' key={genre.name}>
+						{genre.name} </Link>
 				))}
 			</div>
 			

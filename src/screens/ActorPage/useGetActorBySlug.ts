@@ -16,11 +16,11 @@ export const UseGetActorBySlug = (slug: string) => {
 		data: MovieByActor,
 		error: MovieByIdError
 	} = useQuery(['getMovieByActorId', ActorId], () => MovieServices.getMovieByActorId(ActorId), {
-		enabled: !!Actor
+		enabled: Boolean(Actor)
 		// Запрос сработает только если будут данные Актера будут, в этом случае можем юзать только тру и фолс, потому оборачиваем в boolean и после прихода значения, оно становиться тру и запрос идёт
 		
 	})
 	
 	
-	return { Actor, MovieByActor }
+	return { Actor, MovieByActor, isLoading: LoadingActorId || LoadingActorSlug }
 }

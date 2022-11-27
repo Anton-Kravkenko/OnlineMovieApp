@@ -2,23 +2,18 @@ import 'swiper/css'
 import HomePageSlider from '../../components/HomePageSlider/HomePageSlider'
 import Layout from '../../components/Layout/Layout'
 import './home.styles.scss'
-import { UseGetPopularMovies } from './useGetPopularMovies'
+import { UseGetMovies } from './useGetMovies'
 
 const Home = () => {
-	const { isLoading, data, error } = UseGetPopularMovies()
-	console.log(data)
+	const { isLoading, data, error } = UseGetMovies()
 	if (!data) {
 		return null
 	}
 	
 	return <Layout>
-		<div style={{
-			position: 'relative',
-			zIndex: '1000'
-		}}>
-			
-			<HomePageSlider data={data} />
-		</div>
+		
+		
+		<HomePageSlider data={data} />
 	</Layout>
 }
 

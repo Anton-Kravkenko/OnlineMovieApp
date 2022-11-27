@@ -17,8 +17,10 @@
 		"react-dom": "^18.2.0",
 		"react-hook-form": "^7.39.3",
 		"react-icons": "^4.6.0",
+		"react-player": "^2.11.0",
 		"react-router-dom": "^6.4.3",
 		"react-scripts": "5.0.1",
+		"react-toastify": "^9.1.1",
 		"swiper": "^8.4.4",
 		"web-vitals": "^2.1.4"
 	},
@@ -47,6 +49,7 @@
 		]
 	},
 	"devDependencies": {
+		"@types/video-react": "^0.15.1",
 		"@webpack-cli/generators": "^3.0.0",
 		"css-loader": "^6.7.1",
 		"mini-css-extract-plugin": "^2.6.1",

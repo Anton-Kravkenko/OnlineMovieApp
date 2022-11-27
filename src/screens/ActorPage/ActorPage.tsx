@@ -4,13 +4,19 @@ import Layout from '../../components/Layout/Layout'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import MovieCardWrapper from '../../components/MovieCard/MoviecardWrapper/MovieCardWrapper'
 import { IMovie } from '../Home/home.interface'
+import Loader from '../Loader/Loader'
 import './ActorPage.styles.scss'
 import { UseGetActorBySlug } from './useGetActorBySlug'
 
 const ActorPage = () => {
 	const params: any = useParams()
 	const navigate = useNavigate()
-	const { MovieByActor, Actor } = UseGetActorBySlug(params.ActorSlug)
+	const { MovieByActor, Actor, isLoading } = UseGetActorBySlug(params.ActorSlug)
+	
+	
+	if (isLoading) {
+		return <Loader />
+	}
 	
 	return <Layout>
 		<div className='HeaderActorPage'>

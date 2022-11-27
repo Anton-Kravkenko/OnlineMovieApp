@@ -1,6 +1,6 @@
 
 .Wrapper {
-	background-color: #0C081C;
+	background-color: black;
 	min-height: 100vh;
 	color: white;
 }
@@ -19,18 +19,20 @@
 }
 
 .navigationBar {
+	background-color: white;
+	width: 100%;
 	display: flex;
 	left: 50%;
 	transform: translate(-50%, 0);
-	height: 40px;
-	position: fixed;
+	height: 80px;
 	z-index: 1000;
-	bottom: 5px;
+	position: fixed;
+	bottom: 0px;
 	align-items: center;
 	justify-content: center;
 	gap: 40px;
 	
-	border-radius: 16px;
+	border-radius: 16px 16px 0px 0px;
 	transition: ease 0.5s;
 }
 
@@ -48,6 +50,9 @@
 	color: deepskyblue;
 }
 
+.flexLayaut {
+	display: flex;
+}
 
 .ErrorPage {
 	align-items: center;

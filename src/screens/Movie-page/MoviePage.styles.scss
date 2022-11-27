@@ -1,7 +1,7 @@
 
 .MoviePageBg:after {
-	background: rgb(12, 8, 28);
-	background: linear-gradient(0deg, rgba(12, 8, 28, 1) 5%, rgba(255, 255, 255, 0) 25%);
+	background: rgb(0, 0, 0);
+	background: linear-gradient(0deg, rgba(0, 0, 0, 1) 5%, rgba(255, 255, 255, 0) 25%);
 	content: "";
 	top: 0;
 	left: 0;
@@ -29,7 +29,7 @@
 	justify-content: space-between;
 	
 	.HeaderIcon {
-		background-color: #0C081C;
+		background-color: #20262D;
 		padding: 10px;
 		font-size: 25px;
 		border-radius: 100%;
@@ -75,7 +75,8 @@
 	margin-top: 10px;
 	
 	.GenresElement {
-		background-color: #323944;
+		color: white;
+		background-color: #20262D;
 		padding: 5px 10px 5px 10px;
 		border-radius: 15px;
 		display: flex;
@@ -127,7 +128,7 @@
 	position: relative;
 	border-radius: 20px;
 	display: flex;
-	background-color: #1B182B;
+	background-color: #20262D;
 	
 }
 
@@ -147,3 +148,16 @@
 	border-radius: 100px;
 }
 
+.WatchWrapper {
+	padding: 10px 20px 10px 20px;
+	color: white;
+	background-color: #20262D;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+.TitleAndWatch {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
