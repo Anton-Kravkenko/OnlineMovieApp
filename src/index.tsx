@@ -1,19 +1,13 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
-import ActorPage from './screens/ActorPage/ActorPage'
-import Favorites from './screens/Favorites/favorites'
-import GenrePage from './screens/GenrePage/GenrePage'
-import Home from './screens/Home/home'
-import Loader from './screens/Loader/Loader'
-import MoviePages from './screens/Movie-page/MoviePages'
-import MovieWatch from './screens/MovieWatch/MovieWatch'
-import Notfound from './screens/notfound/notfound'
-import Search from './screens/Search/search'
-import Trending from './screens/Trending/Trending'
+import { store } from './redux/store'
 import './utils/font/Objet-Bold.ttf'
+import AuthProvider from './shared/AuthProvider/AuthProvider'
+import { router } from './utils/routerPatch'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -21,63 +15,18 @@ const queryClient = new QueryClient({
 	}
 })
 
-const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <Home />
-	},
-	{
-		path: '/search',
-		element: <Search />
-	},
-	
-	{
-		path: '/movies/:movieSlug',
-		element: <MoviePages />
-	},
-	{
-		path: '/actor/:ActorSlug',
-		element: <ActorPage />
-	},
-	
-	{
-		path: '/genre/:genreSlug',
-		element: <GenrePage />
-	},
-	
-	{
-		path: '/trending',
-		element: <Trending />
-	},
-	
-	{
-		path: '/Favorites',
-		element: <Favorites />
-	},
-	{
-		path: '/Auth',
-		element: <Loader />
-	},
-	{
-		path: '/Watch/:slug',
-		element: <MovieWatch />
-	},
-	{
-		path: '*',
-		element: <Notfound />
-	}
-
-])
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 )
+// Add auth provider
 root.render(
-	<React.StrictMode>
-		<QueryClientProvider client={queryClient}>
-			
-			<RouterProvider router={router} />
-		</QueryClientProvider>
-	</React.StrictMode>
+	<Provider store={store}>
+		<React.StrictMode>
+			<QueryClientProvider client={queryClient}>
+				<RouterProvider router={router} />
+			</QueryClientProvider>
+		</React.StrictMode>
+	</Provider>
 )
 
 

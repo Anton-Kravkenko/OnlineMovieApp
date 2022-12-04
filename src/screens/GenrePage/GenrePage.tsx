@@ -1,10 +1,10 @@
 import { BsArrowLeftCircle } from 'react-icons/bs'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
+import Loader from '../../components/Loader/Loader'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import MovieCardWrapper from '../../components/MovieCard/MoviecardWrapper/MovieCardWrapper'
 import { IMovie } from '../Home/home.interface'
-import Loader from '../Loader/Loader'
 import './genre.styles.scss'
 import { UseGenre } from './useGenre'
 

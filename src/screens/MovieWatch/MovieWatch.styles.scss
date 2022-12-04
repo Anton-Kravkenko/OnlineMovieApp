@@ -2,3 +2,15 @@
 	display: flex;
 	align-items: center;
 }
+
+.VideoPlayerFrame {
+	width: 100%;
+	max-height: 80vh;
+	height: 100%;
+	object-fit: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	border: none;
+}

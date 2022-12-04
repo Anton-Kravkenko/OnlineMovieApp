@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { MovieServices } from '../../utils/services'
+import { MovieServices } from '../../utils/services/services'
 
 export const UseGenre = (slug: string) => {
 	

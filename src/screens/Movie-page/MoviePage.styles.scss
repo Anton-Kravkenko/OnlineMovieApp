@@ -11,6 +11,21 @@
 	z-index: 1;
 }
 
+
+.FavoritesButtonWrapper {
+	background-color: #20262D;
+	border-radius: 100%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	.button {
+	
+	}
+	
+}
+
 .MoviePageBg {
 	height: 60vh;
 	background-size: cover;
@@ -23,10 +38,10 @@
 
 .ButtonInHeader {
 	padding: 15px;
-	
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	
 	
 	.HeaderIcon {
 		background-color: #20262D;

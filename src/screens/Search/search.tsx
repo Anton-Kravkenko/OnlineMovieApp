@@ -1,10 +1,10 @@
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
+import Loader from '../../components/Loader/Loader'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import MovieCardWrapper from '../../components/MovieCard/MoviecardWrapper/MovieCardWrapper'
 import { IMovie } from '../Home/home.interface'
-import Loader from '../Loader/Loader'
 import './search.styles.scss'
 import { UseSearch } from './UseSearch'
 

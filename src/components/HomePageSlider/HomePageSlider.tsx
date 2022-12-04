@@ -17,9 +17,9 @@ const HomePageSlider = ({ data }: any) => {
 		>
 			
 			{data.data.map((movie: IMovie) => (
-				<SwiperSlide>
+				<SwiperSlide key={movie._id}>
 					<Link to={`/movies/${movie.slug}`}>
-						<div className='picture' key={movie._id}>
+						<div className='picture'>
 							<img alt={'Load...'} src={GetMediaSource(movie.poster)} />
 						
 						</div>

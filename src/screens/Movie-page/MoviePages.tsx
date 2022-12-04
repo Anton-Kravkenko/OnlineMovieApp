@@ -1,14 +1,14 @@
 import { useQuery } from '@tanstack/react-query'
 import { AiFillStar } from 'react-icons/ai'
 import { BsArrowLeftShort } from 'react-icons/bs'
-import { MdFavoriteBorder } from 'react-icons/md'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Layout from '../../components/Layout/Layout'
+import Loader from '../../components/Loader/Loader'
 import { GetMediaSource } from '../../utils/getMediaSource'
-import { MovieServices } from '../../utils/services'
+import { MovieServices } from '../../utils/services/services'
 import { IActors, IGenre } from '../Home/home.interface'
-import Loader from '../Loader/Loader'
+import FavoritesButton from './Favorites.button'
 import './MoviePage.styles.scss'
 
 const MoviePages = () => {
@@ -23,7 +23,6 @@ const MoviePages = () => {
 	if (movie === undefined) {
 		return null
 	}
-	
 	if (isLoading) {
 		return <Loader />
 	}
@@ -39,7 +38,9 @@ const MoviePages = () => {
 			}}>
 				<div className='ButtonInHeader'>
 					<BsArrowLeftShort className='HeaderIcon' onClick={() => navigate(-1)} />
-					<MdFavoriteBorder className='HeaderIcon' />
+					<div className='FavoritesButtonWrapper'>
+						<FavoritesButton movieId={movie.data._id} />
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+@import 'react-redux-toastr/src/styles/index';
 
 .Wrapper {
 	background-color: black;
@@ -19,7 +20,7 @@
 }
 
 .navigationBar {
-	background-color: white;
+	background-color: whitesmoke;
 	width: 100%;
 	display: flex;
 	left: 50%;
@@ -47,7 +48,7 @@
 
 
 .navigationBar a:active {
-	color: deepskyblue;
+	color: #20262D;
 }
 
 .flexLayaut {
