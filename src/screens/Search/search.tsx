@@ -18,7 +18,7 @@ const Search = () => {
 	
 	return <Layout HaveBottomPadding>
 		<input placeholder='Search movie!' {...(register('SearchValue'))}
-		       className='Search_imput' />
+		       className='SearchImput' />
 		
 		
 		{!!SearchTerm ? (

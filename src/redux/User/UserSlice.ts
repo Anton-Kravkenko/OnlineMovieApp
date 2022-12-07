@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { GetStoreLocalstorage } from '../../utils/localStorage/localstorage'
+import { GetStoreLocalstorage } from '../../utils/localstorage'
 
 
 import { CheckUser, login, logout, register } from './userAction'

@@ -1,7 +1,7 @@
 import 'swiper/css'
-import HomePageSlider from '../../components/HomePageSlider/HomePageSlider'
 import Layout from '../../components/Layout/Layout'
 import './home.styles.scss'
+import HomePageSlider from './HomePageSlider/HomePageSlider'
 import { UseGetMovies } from './useGetMovies'
 
 const Home = () => {

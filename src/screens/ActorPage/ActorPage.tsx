@@ -1,5 +1,5 @@
-import { BsArrowLeftCircle } from 'react-icons/bs'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import HeaderInformations from '../../components/InformationHeader/HeadersInformation'
 import Layout from '../../components/Layout/Layout'
 import Loader from '../../components/Loader/Loader'
 import MovieCard from '../../components/MovieCard/MovieCard'
@@ -19,11 +19,9 @@ const ActorPage = () => {
 	}
 	
 	return <Layout>
-		<div className='HeaderActorPage'>
-			<h1>{Actor?.data.name}</h1>
-			<BsArrowLeftCircle onClick={() => navigate(-1)} />
 		
-		</div>
+		
+		<HeaderInformations title={Actor?.data.name} />
 		<MovieCardWrapper>
 			{MovieByActor?.data.map((movie: IMovie) => (
 					<Link to={`/movies/${movie.slug}`}>

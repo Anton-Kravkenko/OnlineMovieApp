@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { toastr } from 'react-redux-toastr'
-import { Navigate, useNavigate } from 'react-router-dom'
 import { ErrorApi } from '../../utils/api/error.api'
 import { AuthServices } from '../../utils/services/Auth.services'
 import { IauthResponce, IemailPassword } from './UserInterface'
@@ -37,9 +36,8 @@ export const login = createAsyncThunk<IauthResponce, IemailPassword>('auth/login
 })
 
 
-export const logout = createAsyncThunk('auth/logout', async () => {
+export const logout = createAsyncThunk('auth/logout', async (navigate) => {
 	await AuthServices.logout()
-	toastr.info('Logout', 'You Logout!')
 })
 
 

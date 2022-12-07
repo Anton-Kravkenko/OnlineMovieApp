@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import { EffectCards, EffectCreative, EffectCube, EffectFlip } from 'swiper'
-import 'swiper/css/effect-creative'
+import { EffectCards } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/scss/effect-cards'
 import Layout from '../../components/Layout/Layout'
 import { GetMediaSource } from '../../utils/getMediaSource'
 import { IMovie } from '../Home/home.interface'
@@ -13,21 +13,18 @@ const Trending = () => {
 	return <Layout>
 		<div className='TrendingWrapper'>
 			<Swiper effect={'cards'}
-			        grabCursor={true}
-			        spaceBetween={30}
-			        creativeEffect={{
-				        prev: {
-					        shadow: true,
-					        translate: [0, 0, -100]
-				        },
-				        next: {
-					        translate: ['100%', 0, -10],
-					        opacity: 10000,
-					        shadow: true
-				        }
-			        }}
+			        centeredSlides={true} creativeEffect={{
+				prev: {
+					shadow: true,
+					translate: [0, 0, -100]
+				},
+				next: {
+					translate: ['100%', 0, -10],
+					opacity: 10000,
+					shadow: true
+				}
+			}}
 			        modules={[EffectCards]}
-			        centeredSlides={true}
 			        slidesPerView={'auto'}
 			        className='HomeSlider'
 			>

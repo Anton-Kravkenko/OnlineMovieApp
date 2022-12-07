@@ -3,7 +3,7 @@ import Layout from '../Layout/Layout'
 import './Loader.styles.scss'
 
 const Loader = () => {
-	return <Layout className={'ErrorPage'}>
+	return <Layout className='ErrorPage'>
 		<div>
 			<span className='loader'><span className='loader-inner'></span></span>
 		</div>

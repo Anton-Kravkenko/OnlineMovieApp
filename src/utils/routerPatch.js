@@ -9,7 +9,6 @@ import MovieWatch from '../screens/MovieWatch/MovieWatch'
 import Notfound from '../screens/notfound/notfound'
 import Search from '../screens/Search/search'
 import Trending from '../screens/Trending/Trending'
-import AdminPage from '../screens/UserPage/AdminPage/AdminPage'
 import LoginPage from '../screens/UserPage/Auth/login/loginPage'
 import Register from '../screens/UserPage/Auth/Register/Register'
 
@@ -18,6 +17,7 @@ export const router = createBrowserRouter([
 		path: '/',
 		element: <Home />
 	},
+	
 	{
 		path: '/search',
 		element: <Search />
@@ -46,10 +46,7 @@ export const router = createBrowserRouter([
 		path: '/Favorites',
 		element: <Favorites />
 	},
-	{
-		path: '/AdminPage',
-		element: <AdminPage />
-	},
+	
 	{
 		path: '/Login',
 		element: <LoginPage />

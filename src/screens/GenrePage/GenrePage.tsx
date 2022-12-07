@@ -1,5 +1,5 @@
-import { BsArrowLeftCircle } from 'react-icons/bs'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import HeaderInformations from '../../components/InformationHeader/HeadersInformation'
 import Layout from '../../components/Layout/Layout'
 import Loader from '../../components/Loader/Loader'
 import MovieCard from '../../components/MovieCard/MovieCard'
@@ -10,20 +10,15 @@ import { UseGenre } from './useGenre'
 
 const GenrePage = () => {
 	const params: any = useParams()
-	const navigate = useNavigate()
 	const { MovieByGenreId, GenreBySlug, isLoading } = UseGenre(params.genreSlug)
-	console.log(MovieByGenreId, GenreBySlug, isLoading)
-	
 	if (isLoading) {
 		return <Loader />
 	}
 	
 	return <Layout HaveBottomPadding>
-		<div className='HeaderGenrePage'>
-			<h1>{GenreBySlug?.data.name}</h1>
-			<BsArrowLeftCircle onClick={() => navigate(-1)} />
+		<HeaderInformations title={GenreBySlug?.data.name} />
 		
-		</div>
+		
 		<MovieCardWrapper>
 			{MovieByGenreId?.data.map((movie: IMovie) => (
 					<Link to={`/movies/${movie.slug}`}>

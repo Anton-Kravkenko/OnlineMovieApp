@@ -3,10 +3,10 @@ import ReduxToastrd from 'react-redux-toastr'
 
 const ReduxToast: FC = () => {
 	return <ReduxToastrd
-		newestOnTop={false}
+		newestOnTop={true}
 		progressBar={true}
 		closeOnToastrClick={true}
-		timeOut={3000}
+		timeOut={1000}
 		transitionIn={'fadeIn'}
 		transitionOut={'fadeOut'}
 	/>

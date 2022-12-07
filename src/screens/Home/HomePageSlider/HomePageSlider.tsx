@@ -3,8 +3,8 @@ import { EffectCoverflow } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/effect-cards'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { IMovie } from '../../screens/Home/home.interface'
-import { GetMediaSource } from '../../utils/getMediaSource'
+import { GetMediaSource } from '../../../utils/getMediaSource'
+import { IMovie } from '../home.interface'
 import './HomePageSlider.styles.scss'
 
 const HomePageSlider = ({ data }: any) => {
